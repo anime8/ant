@@ -1,0 +1,14 @@
+
+{
+    "TimeFormat":"2006-01-02 15:04:05",
+    "File": {
+        "filename": "/root/logs/ant-work.log",
+        "level": "INFO",
+        "daily": true,
+        "maxlines": 1000000,
+        "maxsize": 1,
+        "maxdays": -1,
+        "append": true,
+        "permit": "0660"
+    }
+}
