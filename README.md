@@ -17,6 +17,14 @@ kafka|kafka_2.11-1.1.0|需要先部署jdk和zk
 ## 图片展示
 ### 主页面
 ![RUNOOB 图标](https://github.com/anime8/ant/blob/master/images/home_page.png)
+### 部署kafka集群界面
+![RUNOOB 图标](https://github.com/anime8/ant/blob/master/images/install_kafka.png)
+### 部署redis哨兵集群界面
+![RUNOOB 图标](https://github.com/anime8/ant/blob/master/images/install_redis.png)
+### 部署zookeeper集群界面
+![RUNOOB 图标](https://github.com/anime8/ant/blob/master/images/install_zookeeper.png)
+### 查看安装进度界面
+![RUNOOB 图标](https://github.com/anime8/ant/blob/master/images/view_install.png)
 
 ## 部署
 ### 环境变量设置
