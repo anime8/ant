@@ -17,15 +17,14 @@ kafka|kafka_2.11-1.1.0|需要先部署jdk和zk
 ## 部署
 ### 环境变量设置
 vim /etc/profile
----
+```
 export GOROOT=/usr/local/go
 export PATH="$PATH:$GOROOT/bin"
 export GOPATH=/opt/app/go
 export PATH="$PATH:$GOPATH/bin"
-
 export NODE_HOME=/usr/local/node-v12.12.0-linux-x64
 export PATH="$PATH:$NODE_HOME/bin"
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
----
+```
 source /etc/profile
