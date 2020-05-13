@@ -62,7 +62,7 @@ bee run
 
 ```
 ### ant-work配置
-ant-work的配置文件有2个，分别是app.conf和log.json。它们都在/opt/app/go/src/ant-api/conf下面。app.conf主要需要更改连接的reids。
+ant-work的配置文件有2个，分别是app.conf和log.json。它们都在/opt/app/go/src/ant-work/conf下面。app.conf主要需要更改连接的reids。
 注意：redis连接需要和ant-api配置同一个redis。
 log.json需要更改日志路径。配置好后运行，命令如下：
 ```
