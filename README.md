@@ -14,6 +14,10 @@ redis|redis-2.8.10, redis-3.2.0, redis-5.0.5|无
 zookeeper|zookeeper-3.4.14|需要先部署jdk
 kafka|kafka_2.11-1.1.0|需要先部署jdk和zk
 
+## 图片展示
+### 主页面
+![RUNOOB 图标](https://github.com/anime8/ant/blob/master/images/home_page.png)
+
 ## 部署
 ### 环境变量设置
 ```
