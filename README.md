@@ -63,7 +63,7 @@ cd /opt/app/go/src/ant-api
 bee run
 
 ```
-注意：redis连接需要和ant-work配置同一个redis，mysql需要创建一个ant库，表会自动创建。
+*注意：redis连接需要和ant-work配置同一个redis，mysql需要创建一个ant库，表会自动创建。*
 ### ant-work配置
 ant-work的配置文件有2个，分别是app.conf和log.json。它们都在/opt/app/go/src/ant-work/conf下面。app.conf主要需要更改连接的reids。
 log.json需要更改日志路径。配置好后运行，命令如下：
@@ -71,7 +71,7 @@ log.json需要更改日志路径。配置好后运行，命令如下：
 cd /opt/app/go/src/ant-work
 bee run
 ```
-注意：redis连接需要和ant-api配置同一个redis。
+*注意：redis连接需要和ant-api配置同一个redis。*
 ### ant-web配置
 ant-web有一个配置/opt/app/go/src/ant-web/src/conf.js，需要将ip地址改成ant-api的地址。
 配置好后运行，命令如下：
@@ -80,7 +80,7 @@ cd /opt/app/go/src/ant-web
 npm install
 npm start
 ```
-注意：npm install为安装依赖，只需要在首次安装时使用。
+*注意：npm install为安装依赖，只需要在首次安装时使用。*
 
 ### nginx配置
 因为只有同源请求才会带上cookies，因此我们需要使用nginx做一下代理。配置如下：
