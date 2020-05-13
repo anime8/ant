@@ -78,3 +78,46 @@ npm install
 npm start
 ```
 注意：npm install为安装依赖，只需要在首次安装时使用。
+
+### nginx配置
+因为只有同源请求才会带上cookies，因此我们需要使用nginx做一下代理。配置如下：
+```
+    upstream AntWebServer {
+                server 127.0.0.1:3000;
+    }
+    upstream AntApiServer {
+                server 127.0.0.1:8080;
+    }
+    server {
+        listen       80;
+        server_name  localhost;
+        
+        charset utf-8;
+        
+        location / {
+                        proxy_http_version 1.1;
+                        proxy_set_header Connection "";
+                        proxy_set_header Upgrade $http_upgrade;
+                        proxy_set_header Connection "Upgrade";
+                        proxy_set_header        Host            $host:$server_port;
+                        #proxy_set_header        X-Real-IP       $remote_addr;
+                        #proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                        proxy_pass http://AntWebServer/;
+        }               
+        location /api/ {
+                        proxy_http_version 1.1;
+                        proxy_set_header Connection "";
+                        proxy_set_header X-Real-IP $remote_addr;
+                        proxy_set_header        Host            $host:$server_port;
+                        proxy_set_header        X-Real-IP       $remote_addr;
+                        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                        proxy_pass http://AntApiServer/;
+        }               
+        
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }   
+        
+    }
+```
