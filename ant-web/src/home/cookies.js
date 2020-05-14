@@ -6,5 +6,5 @@ const cookies = new Cookies();
 export function CleanToken() {
   cookies.remove('username');
   cookies.remove('usertoken');
-  window.location.href="/login";
+  window.location.href="/";
 }

@@ -5,15 +5,18 @@ import HeaderFloating from './home/header';
 import App from './home/home';
 import Logging from './usercenter/login';
 import * as serviceWorker from './serviceWorker';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 
 ReactDOM.render(<HeaderFloating />, document.getElementById('HeaderFloating'));
 
-if (window.location.pathname === "/") {
+if (cookies.get("username") && cookies.get("usertoken")) {
   ReactDOM.render(<App />, document.getElementById('root'));
 }
 
-if (window.location.pathname === "/login") {
+if (!cookies.get("username") || !cookies.get("usertoken")) {
   ReactDOM.render(<Logging />, document.getElementById('Logging'));
 }
 
