@@ -252,15 +252,6 @@ func (redis Redis) UpdateConf() bool {
 				return false
 			}
 			logger.Info(sentinel + " 当前版本为：" + redis.RedisVersion + ",删除protected-mode配置成功。")
-		case "redis-3.2.0":
-			command = "sed -i 's#protected-mode no##g' " + redis.RedisConf + "/sentinel.conf"
-			cmd = exec.Command("ssh", ssh, command)
-			err = cmd.Run()
-			if err != nil {
-				logger.Error(sentinel + " 当前版本为：" + redis.RedisVersion + ",删除protected-mode配置失败。")
-				return false
-			}
-			logger.Info(sentinel + " 当前版本为：" + redis.RedisVersion + ",删除protected-mode配置成功。")
 		}
 
 
